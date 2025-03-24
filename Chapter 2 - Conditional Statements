@@ -1,0 +1,112 @@
+## *** Chapter 2.1 - Python Conditional Statements - Notes***
+
+## Introduction to Conditional Statements:
+    Conditional statements allow programs to make decisions based on conditions. The key keywords used are:
+    - if
+    - elif (else if)
+    - else
+
+## The `if` Statement
+    The `if` statement executes a block of code only if a condition evaluates to `True`.
+
+### Syntax:
+    if condition:
+         Code to execute if condition is True
+     Example:
+        x = 10
+        if x > 5:
+            print("x is greater than 5")
+    
+    **Output:**
+    x is greater than 5
+
+
+
+**## The `if-else` Statement**
+The `else` block executes when the `if` condition evaluates to `False`.
+
+### Syntax:
+    if condition:
+        # Code if condition is True
+    else:
+        # Code if condition is False
+    Example:
+        x = 3
+        if x > 5:
+            print("x is greater than 5")
+        else:
+            print("x is not greater than 5")
+        **Output:**
+        x is not greater than 5
+
+
+
+**## The `if-elif-else` Statement**
+- `elif` allows checking multiple conditions sequentially.
+- Only one block is executed, the first `True` condition.
+
+### Syntax:
+    if condition1:
+        # Code for condition1
+    elif condition2:
+        # Code for condition2
+    else:
+        # Code if no conditions are True
+
+    Example:
+    x = 10
+    if x < 0:
+        print("Negative number")
+    elif x == 0:
+        print("Zero")
+    else:
+        print("Positive number")
+    **Output:**
+    Positive number
+
+
+**## Nested `if` Statements**
+Conditional statements can be nested within one another.
+
+### Example:
+x = 20
+if x > 10:
+    print("x is greater than 10")
+    if x > 15:
+        print("x is also greater than 15")
+
+**Output:**
+x is greater than 10
+x is also greater than 15
+
+
+
+**## Logical Operators in Conditions**
+Python supports logical operators to combine multiple conditions:
+- `and` → True if both conditions are True
+- `or` → True if at least one condition is True
+- `not` → Inverts the Boolean value
+
+### Example:
+x = 7
+y = 10
+if x > 5 and y < 15:
+    print("Both conditions are True")
+
+**Output:**
+Both conditions are True
+
+
+**## Summary**
+- `if` executes code when a condition is `True`.
+- `else` provides an alternative when `if` is `False`.
+- `elif` allows checking multiple conditions sequentially.
+- Logical operators help in making complex decisions.
+- Nested `if` statements allow more detailed conditions.
+
+
+
+
+
+
+
