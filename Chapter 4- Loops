@@ -1,0 +1,372 @@
+**# Python Loops and Iteration - Notes**
+
+**## What are Loops?**
+- Loops allow repeating a block of code multiple times.
+- They reduce redundancy and improve efficiency.
+- Python has two types of loops: `for` and `while`.
+
+
+**## The `while` Loop**
+- The `while` loop runs as long as a condition is `True`.
+- If the condition becomes `False`, the loop stops.
+
+### **Syntax:**
+
+while condition:
+    # Code to execute repeatedly
+
+
+### **Example:**
+
+count = 0
+while count < 5:
+    print("Count is:", count)
+    count += 1
+
+**Output:**
+
+Count is: 0
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+
+
+
+5.2 - Definite Loops
+
+**## The `for` Loop**
+- The `for` loop iterates over a sequence (list, string, range, etc.).
+
+### **Syntax:**
+
+for variable in sequence:
+    # Code to execute
+
+
+### **Example:**
+for num in [1, 2, 3, 4, 5]:
+    print("Number:", num)
+
+**Output:**
+```
+Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5
+
+
+**## Using `break` and `continue`**
+- `break`: Exits the loop immediately.
+- `continue`: Skips the current iteration and moves to the next.
+
+### **Example (`break`)**:
+
+for num in range(1, 6):
+    if num == 3:
+        break
+    print(num)
+
+**Output:**
+
+1
+2
+
+### **Example (`continue`)**:
+
+for num in range(1, 6):
+    if num == 3:
+        continue
+    print(num)
+
+**Output:**
+
+1
+2
+4
+5
+
+
+**## The `range()` Function**
+- Generates a sequence of numbers.
+- Can be used in `for` loops.
+
+### **Example:**
+
+for i in range(5):
+    print(i)
+
+**Output:**
+
+0
+1
+2
+3
+4
+
+**## Looping Through Strings**
+- Strings are sequences, so loops can iterate over them.
+
+### **Example:**
+
+for char in "Python":
+    print(char)
+
+**Output:**
+
+P
+y
+t
+h
+o
+n
+
+**## Nested Loops**
+- A loop inside another loop.
+
+### **Example:**
+
+for i in range(3):
+    for j in range(2):
+        print(f"i={i}, j={j}")
+
+**Output:**
+
+i=0, j=0
+i=0, j=1
+i=1, j=0
+i=1, j=1
+i=2, j=0
+i=2, j=1
+
+**## Looping Through Lists**
+- Lists can be iterated using `for` loops.
+
+### **Example:**
+
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+
+**Output:**
+
+apple
+banana
+cherry
+
+
+**## Summary**
+- Loops allow executing code multiple times.
+- `while` loops run until a condition is `False`.
+- `for` loops iterate over sequences.
+- `break` stops a loop early; `continue` skips an iteration.
+- `range()` is useful for generating number sequences.
+- Strings, lists, and other sequences can be looped over.
+
+
+
+
+
+
+
+
+**## Finding the Largest Value**
+- One common use of loops is to find the largest value in a list or sequence.
+- We initialize a variable with a very small value and update it whenever we find a larger number.
+
+### **Example:**
+```python
+largest = None
+numbers = [3, 41, 12, 9, 74, 15]
+
+for num in numbers:
+    if largest is None or num > largest:
+        largest = num
+print("Largest number:", largest)
+```
+**Output:**
+```
+Largest number: 74
+```
+
+**How it works:**
+✔️ `largest` starts as `None`.
+✔️ The loop iterates through each number.
+✔️ If `largest` is `None` or a new number is greater, we update `largest`.
+✔️ At the end, we have the largest value.
+
+---
+
+**## Breaking Out of Loops**
+- The `break` statement stops the loop immediately.
+
+### **Example:**
+```python
+for num in range(10):
+    if num == 5:
+        break
+    print(num)
+```
+**Output:**
+```
+0
+1
+2
+3
+4
+```
+
+---
+
+**## Skipping an Iteration with `continue`**
+- The `continue` statement skips the current iteration and moves to the next one.
+
+### **Example:**
+```python
+for num in range(5):
+    if num == 2:
+        continue
+    print(num)
+```
+**Output:**
+```
+0
+1
+3
+4
+```
+(Note: `2` is skipped.)
+
+---
+
+**## Summary**
+- Loops help automate repetitive tasks.
+- `while` loops run until a condition is `False`.
+- `for` loops iterate over sequences.
+- The `break` statement stops a loop, while `continue` skips an iteration.
+- Finding the largest value is a common use case for loops.
+- Mastering loops is essential for efficient programming in Python.
+
+
+
+5.4 - Loop Idioms
+
+**# Python Loop Idioms - Notes**
+
+**## What are Loop Idioms?**
+- Loop idioms are common patterns used in loops to process sequences efficiently.
+- They help simplify tasks such as finding maximum/minimum values, counting, and summing elements.
+
+---
+
+**## Finding the Largest Value**
+- Initialize a variable with a very small value.
+- Iterate through the sequence, updating the variable whenever a larger value is found.
+
+### **Example:**
+```python
+largest = None
+numbers = [9, 41, 12, 3, 74, 15]
+
+for num in numbers:
+    if largest is None or num > largest:
+        largest = num
+
+print("Largest number:", largest)
+```
+**Output:**
+```
+Largest number: 74
+```
+
+---
+
+**## Finding the Smallest Value**
+- Initialize a variable with a very large value.
+- Iterate through the sequence, updating the variable whenever a smaller value is found.
+
+### **Example:**
+```python
+smallest = None
+numbers = [9, 41, 12, 3, 74, 15]
+
+for num in numbers:
+    if smallest is None or num < smallest:
+        smallest = num
+
+print("Smallest number:", smallest)
+```
+**Output:**
+```
+Smallest number: 3
+```
+
+---
+
+**## Counting in a Loop**
+- A loop can be used to count occurrences of elements.
+
+### **Example:**
+```python
+count = 0
+numbers = [9, 41, 12, 3, 74, 15]
+
+for num in numbers:
+    count += 1
+
+print("Count:", count)
+```
+**Output:**
+```
+Count: 6
+```
+
+---
+
+**## Summing in a Loop**
+- A loop can be used to calculate the total sum of elements.
+
+### **Example:**
+```python
+total = 0
+numbers = [9, 41, 12, 3, 74, 15]
+
+for num in numbers:
+    total += num
+
+print("Total sum:", total)
+```
+**Output:**
+```
+Total sum: 154
+```
+
+---
+
+**## Looping with Boolean Flags**
+- A boolean flag can be used to track a specific condition inside a loop.
+
+### **Example:**
+```python
+found = False
+numbers = [9, 41, 12, 3, 74, 15]
+
+for num in numbers:
+    if num == 12:
+        found = True
+        break
+
+print("Found:", found)
+```
+**Output:**
+```
+Found: True
+```
+
+---
+
+**## Summary**
+✔️ **Finding the largest/smallest values** – Track values dynamically.
+✔️ **Counting and summing** – Use loops to count occurrences or sum elements.
+✔️ **Using boolean flags** – Helps track conditions effectively.
